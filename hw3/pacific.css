@@ -1,0 +1,122 @@
+/*Manoj Malipeddu
+	manoj_malipeddu@student.uml.edu
+	Enrolled in GUI Programming I, COMP 4610
+	9/27/18
+	This CSS file is used with index.html to format the Pacific
+	Trails Resort webpage.*/
+header, hgroup, nav, footer, figure, figcaption, aside, section, article {
+	display: block;
+}
+/*Margin to add space between edges, set background
+  to be light blue, and hide overflow so that colors
+	don't run into each other.*/
+#wrapper {
+	margin: 1%;
+	background: #90C7E3;
+	overflow: hidden;
+}
+/*Background is a gradient from white to dark blue
+	without repeating. Minimum width of window must
+	be 600 px.*/
+body {
+	background: #00569F;
+	background-image: linear-gradient(#FFFFFF,#00569F);
+	background-repeat: no-repeat;
+	font-family: Arial, Helvetica, sans-serif;
+	width: 80%;
+	min-width: 600px;
+	margin: auto;
+}
+/*Set size and padding of nav bar.*/
+nav {
+	padding-top: 1%;
+	height: 100%;
+	width: 200px;
+	float: left;
+	margin: 0;
+}
+/*Remove bullet points, modify font size.*/
+nav ul {
+	font-size: 1.2em;
+	list-style-type: none;
+	margin: 0;
+	padding-left: 10%;
+}
+/*Remove underlines in nav, set text color
+	to black, make text bold.*/
+nav a {
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+}
+nav a:visited {
+	color: #344873;
+}
+nav a:hover {
+	color: #FFFFFF;
+}
+/*Set background of h1 to sunset image. Image
+	starts on right side, no overflow.*/
+h1 {
+	color: white;
+	background: #000033;
+	background-image: url("sunset.jpg");
+	background-repeat: no-repeat;
+	background-position: right;
+	overflow: hidden;
+	margin: 0;
+	padding: 20px;
+}
+/*Set background to white, start at 200px.*/
+#content {
+	background: white;
+	margin-left: 200px;
+	padding-left: 3%;
+}
+img {
+	float: left;
+	padding-right: 2%;
+}
+/*Set color to light blue.*/
+h2 {
+	color: #3399CC;
+	margin: 0;
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+h1,
+h2 {
+	font-family: Georgia, "Times New Roman", serif;
+}
+/*Bullet points to custom image.*/
+#content ul {
+	list-style-image: url('marker.gif');
+}
+/*Bullet points inside to line up with header.*/
+#content ul li {
+	list-style-position: inside;
+}
+#contact {
+	font-size: 90%;
+}
+/*Set color to grey, bold Pacific
+	Trails Resort.*/
+span {
+	color: #666666;
+	font-weight: bold;
+}
+/*Left margin 200px to line up with image.
+	Display inline block so that it is
+	below image. Make text small and italic.*/
+footer {
+	width: 100%;
+	margin-left: 200px;
+	padding-left: 2%;
+	padding-bottom: 2%;
+	padding-top: 2%;
+	background: white;
+	display: inline-block;
+	font-family: Georgia, "Times New Roman", serif;
+	font-style: italic;
+	font-size: small;
+}

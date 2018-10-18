@@ -1,0 +1,145 @@
+/* Manoj Malipeddu
+manoj_malipeddu@student.uml.edu
+Enrolled in GUI Programming I, COMP 4610
+10/9/18
+This css file is to style my home page which serves as an index for the
+rest of the assignments. */
+/* Makes each div use entirety of height. */
+html, body {
+  height: 100%;
+  margin: 0;
+  min-height: 100%;
+}
+
+/* Wrapper class that surrounds body. Sets minimum width and height. Sets position
+  to relative so that inner divs will take up entire height.*/
+#wrapper {
+  background: #00ccff;
+  overflow: hidden;
+  position: relative;
+  min-width: 600px;
+  min-height: 600px;
+  height: 100%;
+  width: 100%;
+}
+
+/* Makes image circular, displays image as a block element, position it on the left side. */
+#wizard {
+  border-radius: 50%;
+  float: left;
+  margin: 0;
+  padding: 1%;
+}
+
+/* Trying to center welcome message. */
+.index-title h1 {
+  text-align: center;
+}
+
+/* Set background image of header. Makes image fill entire header. */
+.index-header {
+  background-image: url("../images/header.jpg");
+  background-repeat: no-repeat;
+  background-position: right;
+  overflow: hidden;
+  background-size: 100%;
+}
+
+/* Set color of header. Add some padding. */
+h1 {
+  padding: 0;
+  margin: 0;
+  color: white;
+  padding-top: 3%;
+}
+
+/* List of links hugs left side, fills all the way to the footer,
+  done by setting position to absolute. Has a green border on the right. */
+.index-list {
+  background: #f5f5dc;
+  position: absolute;
+  width: 150px;
+  height: 100%;
+  padding-left: 1%;
+  border: 0;
+  border-style: solid;
+  border-right-width: 3px;
+  border-color: green;
+}
+
+/* Make it so list of links has no bullet points. */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* No underline for list of links. Text is bold. */
+nav a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Hovering over link makes it red. */
+nav a:hover {
+  color: red;
+}
+
+/* Color of links is black, so home page isn't already highlighted. */
+li, a {
+  color: #000000;
+}
+
+/* Move div of information 175 pixels to the right to avoid the
+  list of links. Make sure it fills entire height up to footer.*/
+.index-information {
+  margin-left: 175px;
+  position: absolute;
+  height: 100%;
+}
+
+/* Split information into two columns. */
+.index-about {
+  padding: 0;
+  float: left;
+  width: 50%;
+  height: 100%;
+}
+
+/* Helps split information into two columns. */
+.index-information:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Unordered list of courses. Center text in div. Position
+  it inside so its text doesn't overlap with about me section.*/
+.list-courses {
+  display: table;
+  margin: 0 auto;
+  list-style-type: square;
+  list-style-position: inside;
+}
+
+/* Align the about me in the center of the div. */
+.about {
+  text-align: center;
+}
+
+/* Footer goes to bottom of page, has a black background, white text. */
+.index-contact {
+  background: #000000;
+  bottom: 0;
+  width: 100%;
+  color: #ffffff;
+  position: absolute;
+  text-align: center;
+}
+
+/* Center image of css approval, goes below contact me text. */
+#validation {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
