@@ -17,19 +17,9 @@ function validate() {
   var mrh = document.getElementById("multiplierHigh").value; // Gets string value of multiplier upper boundary from form
   var mdl = document.getElementById("multiplicandLow").value; // Gets string value of multiplicand lower boundary from form
   var mdh = document.getElementById("multiplicandHigh").value; // Gets string value of multiplicand upper boundary from form
-
-  // Checks that mrl is not the empty string and is an integer
-  if (!Number.isInteger(Number(mrl)) || mrl.trim().localeCompare("") == 0) {
-    window.alert("Lower boundary for multiplier must be an integer.");
-    document.getElementById("multiplierLow").value = "";
-    return;
-    // Checks that mrh is not the empty string and is an integer
-  } else if(!Number.isInteger(Number(mrh)) || mrh.trim().localeCompare("") == 0) {
-    window.alert("Upper boundary for multiplier must be an integer.");
-    document.getElementById("multiplierHigh").value = "";
-    return;
-    // Checks that mdl is not the empty string and is an integer
-  } else if(!Number.isInteger(Number(mdl)) || mdl.trim().localeCompare("") == 0) {
+  
+  // Checks that mdl is not the empty string and is an integer
+  if(!Number.isInteger(Number(mdl)) || mdl.trim().localeCompare("") == 0) {
     window.alert("Lower boundary for multiplicand must be an integer.");
     document.getElementById("multiplicandLow").value = "";
     return;
@@ -37,6 +27,16 @@ function validate() {
   } else if(!Number.isInteger(Number(mdh)) || mdh.trim().localeCompare("") == 0) {
     window.alert("Upper boundary for multiplicand must be an integer.");
     document.getElementById("multiplicandHigh").value = "";
+    return;
+  // Checks that mrl is not the empty string and is an integer
+  } else if (!Number.isInteger(Number(mrl)) || mrl.trim().localeCompare("") == 0) {
+    window.alert("Lower boundary for multiplier must be an integer.");
+    document.getElementById("multiplierLow").value = "";
+    return;
+    // Checks that mrh is not the empty string and is an integer
+  } else if(!Number.isInteger(Number(mrh)) || mrh.trim().localeCompare("") == 0) {
+    window.alert("Upper boundary for multiplier must be an integer.");
+    document.getElementById("multiplierHigh").value = "";
     return;
     // Checks that multiplier lower bound is not greater than upper bound
   } else if(Number(mrl) > Number(mrh)) {
