@@ -1,0 +1,15 @@
+body {
+  background-image: linear-gradient(#ff9a9e, #fad0c4);
+}
+
+.row {
+  text-align: center;
+}
+
+.footer-text {
+  color: white;
+}
+
+.space {
+  height: 100px;
+}
