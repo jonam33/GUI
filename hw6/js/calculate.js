@@ -20,21 +20,25 @@ function validate() {
 
   // Checks that mrl is not the empty string and is an integer
   if (!Number.isInteger(Number(mrl)) || mrl.trim().localeCompare("") == 0) {
+    window.alert(mrl.trim());
     window.alert("Lower boundary for multiplier must be an integer.");
     document.getElementById("multiplierLow").value = "";
     return;
   // Checks that mrh is not the empty string and is an integer
   } else if(!Number.isInteger(Number(mrh)) || mrh.trim().localeCompare("") == 0) {
+    window.alert(mrh.trim());
     window.alert("Upper boundary for multiplier must be an integer.");
     document.getElementById("multiplierHigh").value = "";
     return;
   // Checks that mdl is not the empty string and is an integer
   } else if(!Number.isInteger(Number(mdl)) || mdl.trim().localeCompare("") == 0) {
+    window.alert(mdl.trim());
     window.alert("Lower boundary for multiplicand must be an integer.");
     document.getElementById("multiplicandLow").value = "";
     return;
   // Checks that mdh is not the empty string and is an integer
   } else if(!Number.isInteger(Number(mdh)) || mdh.trim().localeCompare("") == 0) {
+    window.alert(mdh.trim());
     window.alert("Upper boundary for multiplicand must be an integer.");
     document.getElementById("multiplicandHigh").value = "";
     return;
