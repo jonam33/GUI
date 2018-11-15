@@ -19,22 +19,22 @@ function validate() {
   var mdh = document.getElementById("multiplicandHigh").value; // Gets string value of multiplicand upper boundary from form
 
   // Checks that mrl is not the empty string and is an integer
-  if (!Number.isInteger(Number(mrl)) || mrl.localeCompare("") == 0) {
+  if (!Number.isInteger(Number(mrl)) || mrl.trim().localeCompare("") == 0) {
     window.alert("Lower boundary for multiplier must be an integer.");
     document.getElementById("multiplierLow").value = "";
     return;
   // Checks that mrh is not the empty string and is an integer
-  } else if(!Number.isInteger(Number(mrh)) || mrh.localeCompare("") == 0) {
+  } else if(!Number.isInteger(Number(mrh)) || mrh.trim().localeCompare("") == 0) {
     window.alert("Upper boundary for multiplier must be an integer.");
     document.getElementById("multiplierHigh").value = "";
     return;
   // Checks that mdl is not the empty string and is an integer
-  } else if(!Number.isInteger(Number(mdl)) || mdl.localeCompare("") == 0) {
+  } else if(!Number.isInteger(Number(mdl)) || mdl.trim().localeCompare("") == 0) {
     window.alert("Lower boundary for multiplicand must be an integer.");
     document.getElementById("multiplicandLow").value = "";
     return;
   // Checks that mdh is not the empty string and is an integer
-  } else if(!Number.isInteger(Number(mdh)) || mdh.localeCompare("") == 0) {
+  } else if(!Number.isInteger(Number(mdh)) || mdh.trim().localeCompare("") == 0) {
     window.alert("Upper boundary for multiplicand must be an integer.");
     document.getElementById("multiplicandHigh").value = "";
     return;
@@ -42,11 +42,13 @@ function validate() {
   } else if(Number(mrl) > Number(mrh)) {
     window.alert("The upper bound of multiplier must be higher.");
     document.getElementById("multiplierHigh").value = "";
+    document.getElementById("multiplierLow").value = "";
     return;
   // Checks that multiplicand lower bound is not greater than upper bound
   } else if(Number(mdl) > Number(mdh)) {
     window.alert("The upper bound of multiplicand must be higher.");
     document.getElementById("multiplicandHigh").value = "";
+    document.getElementById("multiplicandLow").value = "";
     return;
   // Checks that the difference between params for multiplicand is not greater than 1000
   // This is done so the table will not be too large and crash the website
