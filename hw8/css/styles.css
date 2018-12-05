@@ -1,0 +1,43 @@
+/* Manoj Malipeddu
+email: Manoj_Malipeddu@student.uml.edu
+Enrolled in GUI Programming I, COMP 4610
+12/5/18
+This holds the styling required by the dynamic multiplication table.
+Most of the styling is done with bootstrap, so this file is short.
+*/
+/*Set the background to a linear gradient. So that the forms and
+table have the background.*/
+body {
+  background-image: linear-gradient(#ff9a9e, #fad0c4);
+  background-size: cover;
+}
+
+/*Centers the text in the row div. This is for the div holding
+the header and rules on the forms.*/
+.row {
+  text-align: center;
+}
+
+/*Set the text color of the footer to white.*/
+.footer-text {
+  color: white;
+}
+
+/*Height of the empty div so that there is space between
+the footer and table.*/
+.space {
+  height: 100px;
+}
+
+/*Have a red border around the input if there is an error.*/
+.form-control.error {
+  border: 2px solid red;
+}
+
+/*Format the error message below the input.*/
+label.error {
+  background-color: black;
+  color: red;
+  width: 100%;
+  text-align: center;
+}

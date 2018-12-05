@@ -1,0 +1,127 @@
+<!--Manoj Malipeddu-->
+<!--manoj_malipeddu@student.uml.edu-->
+<!--Enrolled in GUI Programming I, COMP 4610-->
+<!--12/5/18-->
+<!--This holds the single page application to create a multiplication table
+based on user inputs.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!--Bootstrap CSS-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!--jqueryui CSS-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+  <!--My stylesheet-->
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+  <!--This section is the header using a navbar. It has assignment number, and links in a dropdown menu for the other pages.-->
+  <nav class="navbar navbar-dark bg-dark">
+
+    <a class="navbar-brand" href="#">Assignment 8</a>
+    <!--Button for dropdown menu of links.-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!--Div holding links.-->
+    <div class="collapse navbar-collapse" id="navbarToggler">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <!--Link to index page.-->
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html">Home</a>
+        </li>
+        <!--Link to homework 3, Pacific.-->
+        <li class="nav-item">
+          <a class="nav-link" href="../hw3/index.html">Pacific</a>
+        </li>
+        <!--Link to first multiplication table.-->
+        <li class="nav-item">
+          <a class="nav-link" href="../hw6/index.html">Dynamic Table</a>
+        </li>
+        <!--Link to assignment 7, multiplication table with validation.-->
+        <li class="nav-item">
+          <a class="nav-link" href="../hw7/index.html">Assignment 7</a>
+        </li>
+        <!--Link to current page.-->
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Assignment 8 <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!--Some information about the table with a header, and rules for the forms.-->
+  <div class="row bg-info">
+    <div class="container">
+      <h1>Dynamic Multiplication Table</h1>
+      <h5>Enter values in the forms to create a multiplication table.
+        The bounds can be switched if necessary. Each form must have
+        a valid integer. Click save table to save the current
+        multiplication table. Delete all tabs will delete all the
+        saved tables. There can be a maximum of 10 saved tables.</h5>
+      </div>
+    </div>
+    <!--This container holds the forms.-->
+    <div class="container">
+      <form  id="forms">
+        <!--First boundary for multiplicand. Has an id so that javascript file can find it.-->
+        <div class="form-group">
+          <label for="multiplicandFirst">First Boundary for Multiplicand</label>
+          <input type="text" name="multiplicandFirst" class="form-control" id="multiplicandFirst" value="0">
+          <div id="slider_multiplicandFirst"></div>
+        </div>
+        <!--Second boundary for multiplicand. Has an id so that javascript file can find it.-->
+        <div class="form-group">
+          <label for="multiplicandSecond">Second Boundary for Multiplicand</label>
+          <input type="text" name="multiplicandSecond" class="form-control" id="multiplicandSecond" value="10">
+          <div id="slider_multiplicandSecond"></div>
+        </div>
+        <!--First boundary for multiplier. Has an id so that javascript file can find it.-->
+        <div class="form-group">
+          <label for="multiplierFirst">First Boundary for Multiplier</label>
+          <input type="text" name="multiplierFirst" class="form-control" id="multiplierFirst" value="0">
+          <div id="slider_multiplierFirst"></div>
+        </div>
+        <!--Second boundary for multiplier. Has an id so that javascript file can find it.-->
+        <div class="form-group">
+          <label for="multiplierSecond">Second Boundary for Multiplier</label>
+          <input type="text" name="multiplierSecond" class="form-control" id="multiplierSecond" value="10">
+          <div id="slider_multiplierSecond"></div>
+        </div>
+      </form>
+    </div>
+    <!--Container for button to save values in forms..-->
+    <div class="container" id="button">
+      <button type="button" class="btn btn-primary" id="submit" onClick="save();">Save Values</button>
+      <button type="button" class="btn btn-danger" id="delete" onClick="deleteTabs();">Delete All Tabs</button>
+    </div>
+    <!--Container to print out the table. Javascript will use this to find the proper section.-->
+    <div class="row" id="table">
+
+    </div>
+    <!--Container for saved multiplication tables.-->
+    <div id="tabs">
+      <ul></ul>
+    </div>
+    <!--Empty div that holds some empty space so the footer doesn't overlap with table..-->
+    <div class="space"></div>
+    <!--Footer with some contact information, and my github.-->
+    <footer class="footer fixed-bottom bg-dark">
+      <div class="container">
+        <p class="footer-text">email: Manoj_Malipeddu@student.uml.edu</p>
+        <p class="footer-text">github: <a href="https://github.com/jonam33">https://github.com/jonam33</a></p>
+      </div>
+    </footer>
+    <!--Jquery javascript file-->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <!--Jquery validation-->
+    <script type='text/javascript' src="https://cdn.jsdelivr.net/jquery.validation/1.14.0/jquery.validate.js"></script>
+    <script type='text/javascript' src="https://cdn.jsdelivr.net/jquery.validation/1.14.0/additional-methods.js"></script>
+    <!--Bootstrap-->
+    <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/4.1.1/bootstrap.min.js"></script>
+    <!--jqueryui-->
+    <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <!--My javascript file to validate, create tables, sliders, tabs-->
+    <script src="js/validate.js"></script>
+  </body>
+  </html>
