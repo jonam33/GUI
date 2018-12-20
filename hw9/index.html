@@ -1,0 +1,110 @@
+<!--Manoj Malipeddu-->
+<!--manoj_malipeddu@student.uml.edu-->
+<!--Enrolled in GUI Programming I, COMP 4610-->
+<!--12/19/18-->
+<!--This holds the single page application to play scrabble.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!--Bootstrap CSS-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!--jqueryui CSS-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+  <!--My stylesheet-->
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+  <!--This section is the header using a navbar. It has assignment number, and links in a dropdown menu for the other pages.-->
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Assignment 9</a>
+    <!--Button for dropdown menu of links.-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!--Div holding links.-->
+    <div class="collapse navbar-collapse" id="navbarToggler">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <!--Link to index page.-->
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html">Home</a>
+        </li>
+        <!--Link to homework 3, Pacific.-->
+        <li class="nav-item">
+          <a class="nav-link" href="../hw3/index.html">Pacific</a>
+        </li>
+        <!--Link to first multiplication table.-->
+        <li class="nav-item">
+          <a class="nav-link" href="../hw6/index.html">Dynamic Table</a>
+        </li>
+        <!--Link to assignment 7, multiplication table with validation.-->
+        <li class="nav-item">
+          <a class="nav-link" href="../hw7/index.html">Assignment 7</a>
+        </li>
+        <!--Link to assignment 8.-->
+        <li class="nav-item">
+          <a class="nav-link" href="../hw8/index.html">Assignment 8</a>
+        </li>
+        <!--Link to current page.-->
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Assignment 9 <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!--Information about the scrabble program.-->
+  <div class="row bg-info">
+    <div class="container">
+      <h1>Scrabble</h1>
+      <h5>Once tiles are dropped onto the board, they cannot be moved. There is a table
+        at the bottom of the page that shows the remaining tiles. Click the new game button
+        to restart the game. Click the submit word button to submit the tiles and get new ones.
+        I could not figure out how to check if there is empty space between letters.</h5>
+      </div>
+    </div>
+    <!--This div holds the tiles for the board.-->
+    <div id="board" class="container">
+      <table>
+        <img id="0" class="board" src="images/Blank.jpg">
+        <img id="1" class="board" src="images/Blank.jpg">
+        <img id="2" class="board" src="images/Double.jpg">
+        <img id="3" class="board" src="images/Blank.jpg">
+        <img id="4" class="board" src="images/Blank.jpg">
+        <img id="5" class="board" src="images/Double.jpg">
+        <img id="6" class="board" src="images/Blank.jpg">
+        <img id="7" class="board" src="images/Blank.jpg">
+      </table>
+    </div>
+    <!--This div holds the tiles on the rack.-->
+    <div id="rack" class="container"></div>
+    <!--This div holds the buttons-->
+    <div id="button" class="container">
+      <button onclick="submitWord()" class="btn">Submit Word</button>
+      <button onClick="newGame()" class="btn">New Game</button>
+    </div>
+    <!--This div holds scores and remaining tiles.-->
+    <div id="score" class="container">0</div>
+    <div id="word" class="container">Current Word: </div>
+    <div id="totalscore" class="container">Total Score: 0</div>
+    <div class="container"><b>Remaining Tiles</b></div>
+    <div id="tilecount" class="container"></div>
+
+    <!--Empty div that holds some empty space so the footer doesn't overlap with table..-->
+    <div class="space"></div>
+    <!--Footer with some contact information, and my github.-->
+    <footer class="footer fixed-bottom bg-dark">
+      <div class="container">
+        <p class="footer-text">email: Manoj_Malipeddu@student.uml.edu</p>
+        <p class="footer-text">github: <a href="https://github.com/jonam33">https://github.com/jonam33</a></p>
+      </div>
+    </footer>
+    <!--Jquery javascript file-->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <!--Bootstrap-->
+    <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/4.1.1/bootstrap.min.js"></script>
+    <!--jqueryui-->
+    <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <!--My javascript file to validate, create tables, sliders, tabs-->
+    <script src="js/assignment9.js"></script>
+  </body>
+  </html>

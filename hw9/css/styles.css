@@ -1,0 +1,65 @@
+/* Manoj Malipeddu
+email: Manoj_Malipeddu@student.uml.edu
+Enrolled in GUI Programming I, COMP 4610
+12/19/18
+This holds the styling required by the scrabble game. Most of the
+styling is done by bootstrap.
+*/
+/*Background gradient.*/
+body {
+  background-image: linear-gradient(#ff9a9e, #fad0c4);
+  background-size: cover;
+}
+
+/*Align text in center.*/
+.container {
+  text-align: center;
+}
+
+/*Letter tile size.*/
+img {
+  width: 75px;
+  height: 75px;
+}
+
+/*Board tile size.*/
+#board img {
+  width: 100px;
+  height: 100px;
+}
+
+/*Margin on letter rack.*/
+#rack {
+  margin-top: 25px;
+}
+
+/*Margin on div of text.*/
+#text {
+  margin-top: 25px;
+}
+
+/*Margin for board tiles.*/
+.board {
+  margin: 10px;
+}
+
+/*Margin for letter tiles.*/
+.letters {
+  margin: 10px;
+}
+
+/*Margin for buttons.*/
+.btn{
+  margin: 10px;
+}
+
+/*Set the text color of the footer to white.*/
+.footer-text {
+  color: white;
+}
+
+/*Height of the empty div so that there is space between
+the footer and end.*/
+.space {
+  height: 100px;
+}
